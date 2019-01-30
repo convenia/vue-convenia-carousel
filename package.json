@@ -1,0 +1,46 @@
+{
+  "name": "vue-coerousel",
+  "version": "0.1.0",
+  "cdn": "dist/vue-coerousel.js",
+  "main": "dist/vue-coerousel.cjs.js",
+  "unpkg": "dist/vue-coerousel.js",
+  "module": "dist/vue-coerousel.es.js",
+  "jsdelivr": "dist/vue-coerousel.js",
+  "umd:main": "dist/vue-coerousel.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "serve": "poi --serve examples/main.js",
+    "build": "bili"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "autoprefixer": "^9.4.3",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.4.2",
+    "bili": "^3.4.2",
+    "jest": "^23.6.0",
+    "node-sass": "^4.11.0",
+    "poi": "^12.1.6",
+    "rollup-plugin-vue": "^4.3.2",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.5.21",
+    "vue-jest": "^3.0.2",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
+  }
+}
