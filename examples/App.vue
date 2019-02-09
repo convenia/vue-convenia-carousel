@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <carousel :per-page="2" :is-loopable="false">
-      <carousel-item v-for="(option, index) in options" :key="index">
+    <c-carousel :per-page="2" :is-loopable="false">
+      <c-carousel-item v-for="(option, index) in options" :key="index">
         <div class="ball" :style="{ backgroundColor: option.color }" />
-      </carousel-item>
-    </carousel>
+      </c-carousel-item>
+    </c-carousel>
   </div>
 </template>
 
 <script>
-import Carousel from '../src/Carousel.vue'
-import CarouselItem from '../src/components/CarouselItem.vue'
+import CCarousel from '../src/Carousel.vue'
+import CCarouselItem from '../src/components/CarouselItem.vue'
 
 export default {
   name: 'app',
 
-  components: { Carousel, CarouselItem },
+  components: { CCarousel, CCarouselItem },
 
   data () {
     return {
@@ -47,11 +47,6 @@ export default {
 </script>
 
 <style lang="scss">
-// #app {
-//   max-width: 900px;
-//   margin: 0 auto;
-// }
-
 .ball {
   width: 300px;
   height: 300px;

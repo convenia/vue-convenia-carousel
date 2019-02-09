@@ -1,4 +1,4 @@
-<h1 align="center">vue-coerousel ✅</h1>
+<h1 align="center">vue-convenia-carousel ✅</h1>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/npm/l/vuelidation.svg" alt="License" target="_blank"></a>
@@ -14,25 +14,25 @@
 
 **Install**
 
-`yarn add vue-coerousel`
+`yarn add vue-convenia-carousel`
 
 <br>
 
 **Use**
 ```vue
 <template>
-  <coerousel :per-page="2" :breakpoints="breakpoints" :is-loopable="false">
-    <coerousel-item v-for="(option, index) in options" :key="index">
+  <c-carousel :per-page="2" :breakpoints="breakpoints" :is-loopable="false">
+    <c-carousel-item v-for="(option, index) in options" :key="index">
       <div class="ball" :style="{ backgroundColor: option.color }" />
-    </coerousel-item>
-  </coerousel>
+    </c-carousel-item>
+  </c-carousel>
 </template>
 
 <script>
-import Coerousel from 'vue-coerousel'
+import CCarousel from 'vue-convenia-carousel'
 
 export default {
-  components: { Coerousel },
+  components: { CCarousel },
 
   data () {
     return {
@@ -68,11 +68,11 @@ export default {
 ## Props
 
 Name           |   type               | required  | default  
------          | -------------------- | --------- | -------- 
+-----          | -------------------- | --------- | --------
 pagination     |  Boolean             | `false`   |  `true`  
 perPage        |  `(String, Number)`  | `false`   |    `1`   
 isDraggable    |  Boolean             | `false`   |  `true`  
-isLoopable     |  Boolean             | `false`   |  `false` 
+isLoopable     |  Boolean             | `false`   |  `false`
 perPage        |  `(String, Number)`  | `false`   |  `1000`  
 breakpoints    |  `Object`            | `false`   |  `{}`    
 
