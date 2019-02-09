@@ -1,11 +1,11 @@
 
 import { shallowMount } from '@vue/test-utils'
-import VueCoeCalendar from '../src/Carousel.vue'
+import CCarousel from '../src/Carousel.vue'
 
 /* eslint-disable */
-describe('VueCoerousel', () => {
+describe('CCarousel', () => {
   test('is a Vue instance', () => {
-    const wrapper = shallowMount(VueCoeCalendar)
+    const wrapper = shallowMount(CCarousel)
 
     expect (wrapper.isVueInstance()).toBeTruthy()
   })
