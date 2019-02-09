@@ -1,23 +1,8 @@
 <script>
-
-// <template>
-//   <div class="vue-coerousel">
-//     position: {{ position }}
-
-//     <div class="wrapper">
-//       <div class="inner" :style="style" @mousedown="mousedown">
-//         <slot></slot>
-//       </div>
-//     </div>
-
-//     <pagination v-if="pagination" />
-//   </div>
-// </template>
-
 import Pagination from './components/Pagination.vue'
 
 export default {
-  name: 'vue-coerousel',
+  name: 'c-carousel',
 
   components: { Pagination },
 
@@ -34,7 +19,6 @@ export default {
       type: Boolean,
       default: true
     },
-    isLoopable: Boolean,
     loopDelay: {
       type: [String, Number],
       default: 1000
@@ -47,7 +31,8 @@ export default {
       type: Number,
       default: 0.95
     },
-    centerAfterDragging: Boolean
+    centerAfterDragging: Boolean,
+    isLoopable: Boolean
   },
 
   data () {
@@ -99,7 +84,9 @@ export default {
       const breakpoints = this.breakpoints
       const width = this.currentWidth
 
-      return this.hasBreakpoints && breakpoints[width] ? breakpoints[width].perPage : this.perPage
+      return this.hasBreakpoints && breakpoints[width]
+        ? breakpoints[width].perPage
+        : this.perPage
     },
 
     currentPage () {
@@ -116,24 +103,21 @@ export default {
   methods: {
     fixPosition () {
       const position = this.position / this.itemSize
-
       const isCenter = !String(position).split('').includes('.')
 
-      if (!isCenter && this.position >= this.endPosition) this.position = (Math.round(this.position / this.itemSize) * 100) / this.internalPerPage
+      if (!isCenter && this.position >= this.endPosition)
+        this.position = (Math.round(this.position / this.itemSize) * 100) / this.internalPerPage
     },
 
     getAcceleration () {
       const time = 1000
-      // console.log(this.currentPage * 100)
       const v1 = this.position - this.initPosition
-      // console.log('v1', v1)
       const delta = Math.sign(v1) === -1 ? v1 * (- 1) : v1
 
       return delta / time
     },
 
     startAnimation () {
-      console.log('go')
       if (this.inertia) {
         this.position += this.acceleration
         this.acceleration *= this.friction
@@ -198,7 +182,7 @@ export default {
 
     const pagination = this.pagination && h(Pagination)
 
-    return h('div', { staticClass: 'vue-coerousel' }, [ [ h('span', null, `position: ${this.position}`) ], wrapper, pagination ])
+    return h('div', { staticClass: 'c-carousel' }, [ [ h('span', null, `position: ${this.position}`) ], wrapper, pagination ])
   },
 
   beforeDestroy () {
@@ -208,8 +192,7 @@ export default {
 </script>
 
 <style lang="scss">
-.vue-coerousel {
-  // ...
+.c-carousel {
 
   & > .wrapper {
     overflow: hidden;
