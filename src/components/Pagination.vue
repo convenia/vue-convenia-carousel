@@ -1,16 +1,5 @@
 <script>
 
-// <template>
-//   <div class="pagination">
-//     <button
-//       v-for="page in pagination"
-//       :key="page"
-//       :class="setClasses(page)"
-//       @click="goToPage(page)"
-//     />
-//   </div>
-// </template>
-
 export default {
   name: 'pagination',
 
