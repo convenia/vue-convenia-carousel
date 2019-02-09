@@ -1,13 +1,6 @@
 <script>
-
-// <template>
-//   <div class="carousel-item" :style="{ flex }">
-//     <slot />
-//   </div>
-// </template>
-
 export default {
-  name: 'carousel-item',
+  name: 'c-carousel-item',
 
   inject: ['data'],
 
@@ -22,13 +15,13 @@ export default {
   },
 
   render (h) {
-    return h('div', { style: this.flex, staticClass: 'carousel-item' }, this.$slots.default)
+    return h('div', { style: this.flex, staticClass: 'c-carousel-item' }, this.$slots.default)
   }
 }
 </script>
 
 <style lang="scss">
-.carousel-item {
+.c-carousel-item {
   display: flex;
   user-select: none;
   outline: none;
